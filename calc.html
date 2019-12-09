@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Public Domain Calculator</title>
+</head>
+
+<body>
+    <main id="content-wrapper">
+        <h1 class="title">Music: Public Domain Calculator</h1>
+
+        <p class="warning">* All fields are required</p>
+        <form name="pubDomainCheck">
+            <fieldset>
+
+                <label>What song would you like to learn about?</label><br>
+                <input type="text" placeholder="Enter song title here" id="song"><br><br>
+
+                <label>What year was the song released?</label><br>
+                <input type="number" placeholder="Enter four digit year" maxlength="4" id="songYear"><br><br>
+
+                <label>Is the artist still alive?</label><br>
+                <input type="checkbox" id="authorYes" name="yes" value='yes'>&nbsp;Yes<br>
+                <input type="checkbox" id="authorNo" name="no" value='no'>&nbsp;No<br><br>
+
+                <label>If no, what year did the artist die?</label><br>
+                <input type="number" placeholder="Enter four digit year" maxlength="4" id="deathYear"><br><br>
+                
+                
+                <button type="button" id="checkSong" value="Check if in Public Domain" onclick="checkSong()">Tell me About This Song</button>
+<br>
+<br>
+           
+                <h3>Public Domain Details:</h3>
+                <div class="result"></div>
+            </fieldset>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
