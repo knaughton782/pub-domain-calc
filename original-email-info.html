@@ -1,0 +1,61 @@
+<!-- INFO FROM INSTRUCTOR: So I have been studying Python in my spare time and I have developed a calculator that will tell a student when a song will enter the public domain. This is an area that everyone seems to struggle with. I was wondering if there was a way to implement this program into my class as a tool the students could use. -->
+
+<!-- Here is the instructor's code notes: -->
+
+
+<!-- get today's date -->
+from datetime import date
+today = date.today().year
+
+
+
+<!-- calculate 77 years after the song was released and display: This part of the calculator will determine when a song written after 1977 will enter the public domain -->
+def calc77():
+pubDomainYear = (authorDeath + 70)
+print(songTitle,'will enter the public domain in', pubDomainYear)
+<!-- end calculate 77 years after the song was released -->
+
+
+
+<!-- calculate 95 years after the song was released and display: This part of the calculator will determine when a song written before 1977 will enter the public domain -->
+def calcBC():
+pubDomainYear = (songYear + 95)
+print(songTitle, 'will enter the public domain in', pubDomainYear)
+<!-- end calculate 95 years after the song was released -->
+
+
+
+<!-- determine if the song is already in public domain and display: This part of the calculator will tell you when a song has already been placed into the public domain  -->
+def antique():
+pubDomainYear = (songYear + 95)
+print(songTitle, 'entered the public domain in', pubDomainYear)
+<!-- end determine if the song is already in public domain  -->
+
+
+
+<!-- This part of the calculator will handle the equation if the song was written after 1977 and the artist is still alive  -->
+def still_alive():
+pubDomainYear = (songYear + 95)
+print(songTitle, 'won"t enter the public domain until at least', pubDomainYear)
+<!-- end artist is alive calculation  -->
+
+
+<!-- same as onclick checkSong function  -->
+while True:
+songTitle = input("What song would you like to learn about? ")
+songYear = int(input('What year was the song released? '))
+
+if songYear >= 1977:
+death = input('Is the writer still alive? (y/n) ')
+if death == 'y':
+still_alive()
+else:
+authorDeath = int(input('What year did the writer die? '))
+calc77()
+
+if songYear < 1977: if songYear>=(today-94):
+    calcBC()
+
+    
+if songYear < (today - 95): antique() if input("Would you like to learn about another song? (y/n) ") == 'n':
+        break
