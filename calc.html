@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
     <title>Public Domain Calculator</title>
+    
 </head>
 
 <body>
@@ -14,26 +15,27 @@
         <h1 class="title">Music in the Public Domain</h1>
 
         <p class="warning">* All fields are required</p>
-        <form name="pubDomainCheck">
+        <form>
             <fieldset>
 
-                <label>What song would you like to learn about?</label><br>
-                <input type="text" placeholder="Enter song title here" id="songTitle" required><br><br>
+                <label>What is the song title?</label><br>
+                <input type="text" placeholder="Enter song title here" id="songTitle" /><br><br>
 
                 <label>What year was the song released?</label><br>
-                <input type="number" placeholder="Enter four digit year" maxlength="4" id="songYear" required><br><br>
+                <input type="number" placeholder="Enter four digit year" id="songYear" /><br><br>
 
                 <label>Is the artist still alive?</label><br>
                 <div class="form-group options">
-                    <input type="checkbox" id="authorYes" name="alive[]" value='yes'>&nbsp;Yes<br>
-                    <input type="checkbox" id="authorNo" name="alive[]" value='no'>&nbsp;No<br><br>
+                    <input type="checkbox" id="authorYes" name="alive" value='yes' />&nbsp;Yes<br>
+                    <input type="checkbox" id="authorNo" name="alive" value='no' />&nbsp;No<br><br>
                 </div>
 
                 <label>If no, what year did the artist die?</label><br>
-                <input type="number" placeholder="Enter four digit year" maxlength="4" id="authorDeath"><br><br>
+                <input type="number" placeholder="Enter four digit year" id="authorDeath" /><br><br>
                 
-                
+                <div style="color: red;" id="empty"></div>
                 <button type="button" value="Check Public Domain Information" onclick="checkSong()">Tell Me About This Song</button>
+                <!-- onclick="checkForm() -->
 <br>
 <br>
 
@@ -43,7 +45,7 @@
         </form>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
     <script src="script.js"></script>
 
 </body>

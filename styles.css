@@ -63,6 +63,10 @@ label {
     margin: 2% 0;
 }
 
+.fillOut {
+    border: 1px solid rgb(218, 50, 50);
+}
+
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
