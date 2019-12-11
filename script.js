@@ -53,15 +53,21 @@ function checkSong() {
     var authorYes = document.getElementById("authorYes").checked;
     var authorNo = document.getElementById("authorNo").checked;
     var authorDeath = parseInt(document.getElementById("authorDeath").value);
-    
+    console.log(authorDeath + 'is this a number');
+
     if ((songYear >= 1977) && (authorYes)) {
         // console.log(songYear);
         result = stillAlive(songYear, songTitle);
         document.getElementById('result').innerHTML = result;
-    } 
+    }
     else if ((songYear >= 1977) && (authorNo)) {
-        result = calc77(authorDeath, songTitle);
-        document.getElementById('result').innerHTML = result;
+        if (isNaN(authorDeath)) {
+            result = `Please enter the year of the artist's death and try again.`;
+            document.getElementById('result').innerHTML = result;
+        } else {
+            result = calc77(authorDeath, songTitle);
+            document.getElementById('result').innerHTML = result;
+        }
     }
     else if (songYear < (year - 95)) {
         result = antique(songYear, songTitle);
@@ -71,6 +77,6 @@ function checkSong() {
         result = calcBC(songYear, songTitle);
         document.getElementById('result').innerHTML = result;
     }
-    
+
 
 }

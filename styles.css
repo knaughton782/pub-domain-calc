@@ -76,6 +76,10 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+input[type=text] .required {
+    border: 1px solid #ccc;
+}
+
 input[type=number] {
     padding: 12px 20px;
     margin: 8px 0;
